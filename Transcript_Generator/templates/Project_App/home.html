@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Transcript Generator</h2>
+
+    <h4>Upload Signature</h4>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+            <input type="file" name="upload" >
+            <br>
+            <button class="btn btn-dark my-4" type="submit">Submit</button>
+            
+    </form>
+
+    <h4>Upload Seal</h4>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+            <input type="file" name="upload" >
+            <br>
+            <button class="btn btn-dark my-4" type="submit">Submit</button>
+            
+    </form>
+
+
+    <p><a href = "all"><button>Generate All Transcript</button></a></p>
+
+    <form action = "range", method = "get">
+        Enter Range : <input name = "start", type = "text">
+        <!-- <input type = "submit" value = "submit"> -->
+        - <input name = "end", type = "text">
+        <!-- <br> -->
+        <input type = "submit" value = "submit">
+      </form>
+
+      <p><a href = "rangeWise"><button>Generate Range Wise Transcript</button></a></p>
+</body>
+</html>
